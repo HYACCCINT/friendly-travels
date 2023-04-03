@@ -1,0 +1,159 @@
+[debug] [2023-04-03T20:55:10.014Z] ----------------------------------------------------------------------
+[debug] [2023-04-03T20:55:10.014Z] Command:       /Users/hinamomori/.nvm/versions/node/v18.15.0/bin/node /Users/hinamomori/.nvm/versions/node/v18.15.0/bin/firebase emulators:start
+[debug] [2023-04-03T20:55:10.015Z] CLI Version:   11.25.2
+[debug] [2023-04-03T20:55:10.015Z] Platform:      darwin
+[debug] [2023-04-03T20:55:10.015Z] Node Version:  v18.15.0
+[debug] [2023-04-03T20:55:10.019Z] Time:          Mon Apr 03 2023 16:55:10 GMT-0400 (Eastern Daylight Saving Time)
+[debug] [2023-04-03T20:55:10.019Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-04-03T20:55:10.077Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-04-03T20:55:10.078Z] > authorizing via signed-in user (hinamomori@google.com)
+[debug] [2023-04-03T20:55:10.889Z] java version "17.0.4.1" 2022-08-18 LTS
+
+[debug] [2023-04-03T20:55:10.889Z] Java(TM) SE Runtime Environment (build 17.0.4.1+1-LTS-2)
+Java HotSpot(TM) 64-Bit Server VM (build 17.0.4.1+1-LTS-2, mixed mode, sharing)
+
+[debug] [2023-04-03T20:55:10.892Z] Parsed Java major version: 17
+[info] i  emulators: Starting emulators: auth, functions, firestore, hosting, storage {"metadata":{"emulator":{"name":"hub"},"message":"Starting emulators: auth, functions, firestore, hosting, storage"}}
+[debug] [2023-04-03T20:55:12.631Z] [logging] Logging Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-03T20:55:12.631Z] [auth] Authentication Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-03T20:55:12.631Z] [firestore] Firestore Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-03T20:55:12.631Z] [firestore.websocket] websocket server for firestore only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-03T20:55:12.632Z] [hosting] Hosting Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-03T20:55:12.632Z] [storage] Storage Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-03T20:55:12.632Z] assigned listening specs for emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}]},"metadata":{"message":"assigned listening specs for emulators"}}
+[debug] [2023-04-03T20:55:12.637Z] [hub] writing locator at /var/folders/ty/q0fp83ln32j3pppd_szyn8d4010cpq/T/hub-friendly-travels.json
+[debug] [2023-04-03T20:55:12.639Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels [none]
+[debug] [2023-04-03T20:55:12.998Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels 200
+[debug] [2023-04-03T20:55:12.998Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels {"projectId":"friendly-travels","projectNumber":"129543685827","displayName":"friendly-travels","name":"projects/friendly-travels","resources":{"hostingSite":"friendly-travels","storageBucket":"friendly-travels.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_b95001ac-6691-4e3d-8d25-f7ba5fdf4c6e"}
+[debug] [2023-04-03T20:55:14.200Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/friendly-travels/sites pageToken=&pageSize=10
+[debug] [2023-04-03T20:55:14.683Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/friendly-travels/sites 200
+[debug] [2023-04-03T20:55:14.683Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/friendly-travels/sites {"sites":[{"name":"projects/friendly-travels/sites/friendly-travels","defaultUrl":"https://friendly-travels.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-03T20:55:14.684Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/friendly-travels/sites 
+[debug] [2023-04-03T20:55:15.173Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/friendly-travels/sites 200
+[debug] [2023-04-03T20:55:15.173Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/friendly-travels/sites {"sites":[{"name":"projects/friendly-travels/sites/friendly-travels","defaultUrl":"https://friendly-travels.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-03T20:55:15.174Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/webApps/-/config [none]
+[debug] [2023-04-03T20:55:15.567Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/webApps/-/config 200
+[debug] [2023-04-03T20:55:15.567Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/webApps/-/config {"projectId":"friendly-travels","appId":"1:129543685827:web:c33c6f8051491f56528476","storageBucket":"friendly-travels.appspot.com","locationId":"us-central","apiKey":"AIzaSyA7QXVOz1BZVMtUHDGGru2chWUMhEFFbFM","authDomain":"friendly-travels.firebaseapp.com","messagingSenderId":"129543685827","measurementId":"G-WQL6VH1YPW"}
+[debug] [2023-04-03T20:55:25.987Z] [functions] Functions Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-03T20:55:25.987Z] [eventarc] Eventarc Emulator only supports listening on one address (127.0.0.1). Not listening on ::1
+[debug] [2023-04-03T20:55:25.987Z] late-assigned ports for functions and eventarc emulators {"user":{"hub":[{"address":"127.0.0.1","family":"IPv4","port":4400},{"address":"::1","family":"IPv6","port":4400}],"ui":[{"address":"127.0.0.1","family":"IPv4","port":4000},{"address":"::1","family":"IPv6","port":4000}],"logging":[{"address":"127.0.0.1","family":"IPv4","port":4500}],"auth":[{"address":"127.0.0.1","family":"IPv4","port":9099}],"firestore":[{"address":"127.0.0.1","family":"IPv4","port":8080}],"firestore.websocket":[{"address":"127.0.0.1","family":"IPv4","port":9150}],"hosting":[{"address":"127.0.0.1","family":"IPv4","port":5000}],"storage":[{"address":"127.0.0.1","family":"IPv4","port":9199}],"functions":[{"address":"127.0.0.1","family":"IPv4","port":5001}],"eventarc":[{"address":"127.0.0.1","family":"IPv4","port":9299}]},"metadata":{"message":"late-assigned ports for functions and eventarc emulators"}}
+[warn] ⚠  functions: The following emulators are not running, calls to these services from the Functions emulator will affect production: database, pubsub {"metadata":{"emulator":{"name":"functions"},"message":"The following emulators are not running, calls to these services from the Functions emulator will affect production: \u001b[1mdatabase, pubsub\u001b[22m"}}
+[debug] [2023-04-03T20:55:25.991Z] defaultcredentials: writing to file /Users/hinamomori/.config/firebase/hinamomori_google_com_application_default_credentials.json
+[debug] [2023-04-03T20:55:25.992Z] Setting GAC to /Users/hinamomori/.config/firebase/hinamomori_google_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /Users/hinamomori/.config/firebase/hinamomori_google_com_application_default_credentials.json"}}
+[debug] [2023-04-03T20:55:25.993Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/adminSdkConfig [none]
+[debug] [2023-04-03T20:55:26.308Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/adminSdkConfig 200
+[debug] [2023-04-03T20:55:26.309Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/adminSdkConfig {"projectId":"friendly-travels","storageBucket":"friendly-travels.appspot.com","locationId":"us-central"}
+[debug] [2023-04-03T20:55:26.339Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-04-03T20:55:26.339Z] Ignoring unsupported arg: single_project_mode_error {"metadata":{"emulator":{"name":"firestore"},"message":"Ignoring unsupported arg: single_project_mode_error"}}
+[debug] [2023-04-03T20:55:26.339Z] Starting Firestore Emulator with command {"binary":"java","args":["-Dgoogle.cloud_firestore.debug_log_level=FINE","-Duser.language=en","-jar","/Users/hinamomori/.cache/firebase/emulators/cloud-firestore-emulator-v1.16.1.jar","--host","127.0.0.1","--port",8080,"--websocket_port",9150,"--project_id","friendly-travels","--rules","/Users/hinamomori/Documents/firebase/23iocodelab/friendly-travels/firestore.rules","--single_project_mode",true,"--functions_emulator","127.0.0.1:5001"],"optionalArgs":["port","webchannel_port","host","rules","websocket_port","functions_emulator","seed_from_export","project_id","single_project_mode"],"joinArgs":false} {"metadata":{"emulator":{"name":"firestore"},"message":"Starting Firestore Emulator with command {\"binary\":\"java\",\"args\":[\"-Dgoogle.cloud_firestore.debug_log_level=FINE\",\"-Duser.language=en\",\"-jar\",\"/Users/hinamomori/.cache/firebase/emulators/cloud-firestore-emulator-v1.16.1.jar\",\"--host\",\"127.0.0.1\",\"--port\",8080,\"--websocket_port\",9150,\"--project_id\",\"friendly-travels\",\"--rules\",\"/Users/hinamomori/Documents/firebase/23iocodelab/friendly-travels/firestore.rules\",\"--single_project_mode\",true,\"--functions_emulator\",\"127.0.0.1:5001\"],\"optionalArgs\":[\"port\",\"webchannel_port\",\"host\",\"rules\",\"websocket_port\",\"functions_emulator\",\"seed_from_export\",\"project_id\",\"single_project_mode\"],\"joinArgs\":false}"}}
+[info] i  firestore: Firestore Emulator logging to firestore-debug.log {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator logging to \u001b[1mfirestore-debug.log\u001b[22m"}}
+[debug] [2023-04-03T20:55:27.151Z] Apr. 03, 2023 4:55:27 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start
+INFO: Started WebSocket server on ws://127.0.0.1:9150
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Apr. 03, 2023 4:55:27 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketServer start\nINFO: Started WebSocket server on ws://127.0.0.1:9150\n"}}
+[debug] [2023-04-03T20:55:27.164Z] API endpoint: http:// {"metadata":{"emulator":{"name":"firestore"},"message":"API endpoint: http://"}}
+[debug] [2023-04-03T20:55:27.164Z] 127.0.0.1:8080
+If you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:
+
+   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080
+
+Dev App Server is now running.
+
+ {"metadata":{"emulator":{"name":"firestore"},"message":"127.0.0.1:8080\nIf you are using a library that supports the FIRESTORE_EMULATOR_HOST environment variable, run:\n\n   export FIRESTORE_EMULATOR_HOST=127.0.0.1:8080\n\nDev App Server is now running.\n\n"}}
+[info] ✔  firestore: Firestore Emulator UI websocket is running on 9150. {"metadata":{"emulator":{"name":"firestore"},"message":"Firestore Emulator UI websocket is running on 9150."}}
+[debug] [2023-04-03T20:55:30.406Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"storage"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-04-03T20:55:30.827Z] Temp file directory for storage emulator: /var/folders/ty/q0fp83ln32j3pppd_szyn8d4010cpq/T/firebase/storage/blobs {"metadata":{"emulator":{"name":"storage"},"message":"Temp file directory for storage emulator: /var/folders/ty/q0fp83ln32j3pppd_szyn8d4010cpq/T/firebase/storage/blobs"}}
+[debug] [2023-04-03T20:55:30.830Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/friendly-travels/sites 
+[debug] [2023-04-03T20:55:31.213Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/friendly-travels/sites 200
+[debug] [2023-04-03T20:55:31.213Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/friendly-travels/sites {"sites":[{"name":"projects/friendly-travels/sites/friendly-travels","defaultUrl":"https://friendly-travels.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2023-04-03T20:55:31.214Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/webApps/-/config [none]
+[debug] [2023-04-03T20:55:31.594Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/webApps/-/config 200
+[debug] [2023-04-03T20:55:31.594Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/webApps/-/config {"projectId":"friendly-travels","appId":"1:129543685827:web:c33c6f8051491f56528476","storageBucket":"friendly-travels.appspot.com","locationId":"us-central","apiKey":"AIzaSyA7QXVOz1BZVMtUHDGGru2chWUMhEFFbFM","authDomain":"friendly-travels.firebaseapp.com","messagingSenderId":"129543685827","measurementId":"G-WQL6VH1YPW"}
+[info] i  hosting[friendly-travels]: Serving hosting files from: src/assets {"metadata":{"emulator":{"name":"hosting"},"message":"Serving hosting files from: \u001b[1msrc/assets\u001b[22m"}}
+[info] ✔  hosting[friendly-travels]: Local server: http://127.0.0.1:5000 {"metadata":{"emulator":{"name":"hosting"},"message":"Local server: \u001b[4m\u001b[1mhttp://127.0.0.1:5000\u001b[22m\u001b[24m"}}
+[info] i  ui: downloading ui-v1.11.4.zip... {"metadata":{"emulator":{"name":"ui"},"message":"downloading ui-v1.11.4.zip..."}}
+[debug] [2023-04-03T20:55:31.751Z] >>> [apiv2][query] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.4.zip 
+[debug] [2023-04-03T20:55:31.960Z] <<< [apiv2][status] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.4.zip 200
+[debug] [2023-04-03T20:55:31.960Z] <<< [apiv2][body] GET https://storage.googleapis.com/firebase-preview-drop/emulator/ui-v1.11.4.zip [stream]
+[info] i  ui: Removing outdated emulator files: ui-v1.11.1-rc-bash {"metadata":{"emulator":{"name":"ui"},"message":"Removing outdated emulator files: ui-v1.11.1-rc-bash"}}
+[info] i  ui: Removing outdated emulator files: ui-v1.11.1-rc-bash.zip {"metadata":{"emulator":{"name":"ui"},"message":"Removing outdated emulator files: ui-v1.11.1-rc-bash.zip"}}
+[debug] [2023-04-03T20:55:34.253Z] Ignoring unsupported arg: auto_download {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: auto_download"}}
+[debug] [2023-04-03T20:55:34.253Z] Ignoring unsupported arg: port {"metadata":{"emulator":{"name":"ui"},"message":"Ignoring unsupported arg: port"}}
+[debug] [2023-04-03T20:55:34.253Z] Starting Emulator UI with command {"binary":"node","args":["/Users/hinamomori/.cache/firebase/emulators/ui-v1.11.4/server/server.js"],"optionalArgs":[],"joinArgs":false} {"metadata":{"emulator":{"name":"ui"},"message":"Starting Emulator UI with command {\"binary\":\"node\",\"args\":[\"/Users/hinamomori/.cache/firebase/emulators/ui-v1.11.4/server/server.js\"],\"optionalArgs\":[],\"joinArgs\":false}"}}
+[info] i  ui: Emulator UI logging to ui-debug.log {"metadata":{"emulator":{"name":"ui"},"message":"Emulator UI logging to \u001b[1mui-debug.log\u001b[22m"}}
+[debug] [2023-04-03T20:55:34.337Z] Web / API server started at 127.0.0.1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at 127.0.0.1:4000\n"}}
+[debug] [2023-04-03T20:55:34.337Z] Web / API server started at ::1:4000
+ {"metadata":{"emulator":{"name":"ui"},"message":"Web / API server started at ::1:4000\n"}}
+[info] i  functions: Watching "/Users/hinamomori/Documents/firebase/23iocodelab/friendly-travels/functions" for Cloud Functions... {"metadata":{"emulator":{"name":"functions"},"message":"Watching \"/Users/hinamomori/Documents/firebase/23iocodelab/friendly-travels/functions\" for Cloud Functions..."}}
+[debug] [2023-04-03T20:55:34.512Z] Validating nodejs source
+[debug] [2023-04-03T20:55:34.957Z] > [functions] package.json contents: {
+  "name": "functions",
+  "scripts": {
+    "lint": "eslint --ext .js,.ts .",
+    "build": "tsc",
+    "build:watch": "tsc --watch",
+    "serve": "npm run build && firebase emulators:start --only functions",
+    "shell": "npm run build && firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "16"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "firebase-admin": "^11.5.0",
+    "firebase-functions": "^4.2.0"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-google": "^0.14.0",
+    "eslint-plugin-import": "^2.25.4",
+    "firebase-functions-test": "^3.0.0",
+    "typescript": "^4.9.0"
+  },
+  "private": true
+}
+[error] ⬢  functions: Failed to load function definition from source: FirebaseError: There was an error reading functions/package.json:
+
+ functions/lib/index.js does not exist, can't deploy Cloud Functions {"metadata":{"emulator":{"name":"functions"},"message":"Failed to load function definition from source: FirebaseError: There was an error reading functions/package.json:\n\n functions/lib/index.js does not exist, can't deploy Cloud Functions"}}
+[info] 
+┌─────────────────────────────────────────────────────────────┐
+│ ✔  All emulators ready! It is now safe to connect your app. │
+│ i  View Emulator UI at http://127.0.0.1:4000/               │
+└─────────────────────────────────────────────────────────────┘
+
+┌────────────────┬────────────────┬─────────────────────────────────┐
+│ Emulator       │ Host:Port      │ View in Emulator UI             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Authentication │ 127.0.0.1:9099 │ http://127.0.0.1:4000/auth      │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Functions      │ 127.0.0.1:5001 │ http://127.0.0.1:4000/functions │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Firestore      │ 127.0.0.1:8080 │ http://127.0.0.1:4000/firestore │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Hosting        │ 127.0.0.1:5000 │ n/a                             │
+├────────────────┼────────────────┼─────────────────────────────────┤
+│ Storage        │ 127.0.0.1:9199 │ http://127.0.0.1:4000/storage   │
+└────────────────┴────────────────┴─────────────────────────────────┘
+  Emulator Hub running at 127.0.0.1:4400
+  Other reserved ports: 4500, 9150
+
+Issues? Report them at https://github.com/firebase/firebase-tools/issues and attach the *-debug.log files.
+ 
+[debug] [2023-04-03T20:56:42.062Z] Apr. 03, 2023 4:56:42 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel
+INFO: Connected to new websocket client
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Apr. 03, 2023 4:56:42 P.M. com.google.cloud.datastore.emulator.firestore.websocket.WebSocketChannelHandler initChannel\nINFO: Connected to new websocket client\n"}}
+[debug] [2023-04-03T20:57:11.799Z] Apr. 03, 2023 4:57:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected non-HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Apr. 03, 2023 4:57:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected non-HTTP/2 connection.\n"}}
+[debug] [2023-04-03T20:57:11.874Z] Apr. 03, 2023 4:57:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead
+INFO: Detected HTTP/2 connection.
+ {"metadata":{"emulator":{"name":"firestore"},"message":"Apr. 03, 2023 4:57:11 P.M. io.gapi.emulators.netty.HttpVersionRoutingHandler channelRead\nINFO: Detected HTTP/2 connection.\n"}}
+[debug] [2023-04-03T20:57:13.822Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/adminSdkConfig [none]
+[debug] [2023-04-03T20:57:14.084Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/adminSdkConfig 200
+[debug] [2023-04-03T20:57:14.084Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/friendly-travels/adminSdkConfig {"projectId":"friendly-travels","storageBucket":"friendly-travels.appspot.com","locationId":"us-central"}
