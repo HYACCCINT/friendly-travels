@@ -1,7 +1,7 @@
 <main>
     <div *ngIf="user$ | async as user; ">
         <div *ngIf="travelsData$ | async as travelsData; ">
-            <button class="createTravel" (click)="createTravel(user.uid)">Create Travel</button>
+            <button mat-raised-button color="primary" class="createTravel" (click)="createTravel(user.uid)">Create Travel</button>
             <div class="edit-card"  >
                 <mat-list role="list">
                     <mat-list-item role="listitem" *ngFor="let tr of travelsData">
