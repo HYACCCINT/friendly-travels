@@ -8,14 +8,5 @@ import { Auth, signOut } from '@angular/fire/auth';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  private auth: Auth = inject(Auth);
-  travelService: TravelService = inject(TravelService);
-  user$ = this.travelService.user$;
 
-  logout() {
-    signOut(this.auth)
-      .catch((error) => {
-        console.log('sign out error: ' + error);
-      });
-  }
 }

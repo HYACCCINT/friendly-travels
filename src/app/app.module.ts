@@ -65,27 +65,6 @@ import { connectFunctionsEmulator, getFunctions, provideFunctions } from '@angul
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideAuth(() => {
-      const auth = getAuth();
-      connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
-      return auth;
-    }),
-    provideFirestore(() => {
-      const firestore = getFirestore();
-      connectFirestoreEmulator(firestore, '127.0.0.1', 8080);
-      return firestore;
-    }),
-    provideStorage(() => {
-      const storage = getStorage();
-      connectStorageEmulator(storage, '127.0.0.1', 9199);
-      return storage;
-    }),
-    provideFunctions(() => {
-      const functions = getFunctions();
-      connectFunctionsEmulator(functions, '127.0.0.1', 5001);
-      return functions;
-    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
