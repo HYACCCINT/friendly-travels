@@ -1,0 +1,15 @@
+:host {
+    display: grid;
+    grid-template-columns: var(--site-grid);
+    padding-block: 64px;
+  }
+  
+  :host > * {
+    grid-column: main;
+  }
+  
+  main {
+    display: inline-block;
+    display: grid;
+    gap: 56px;
+  }

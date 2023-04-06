@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GoogleMapsModule } from '@angular/google-maps'
 
+import {MatCardModule} from '@angular/material/card'; 
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSelectModule } from '@angular/material/select';
 import { MatListModule } from '@angular/material/list'; 
@@ -46,6 +46,7 @@ import { connectFunctionsEmulator, getFunctions, provideFunctions } from '@angul
     EditTravelComponent,
   ],
   imports: [
+    MatCardModule,
     MatRadioModule,
     MatListModule,
     MatInputModule,

@@ -13,7 +13,7 @@ export class EditStopComponent {
   @Input() travelId: string = '';
   @Input() addStop!: (travelId: string) => void;
   @Input() deleteStop!: (stopId: string) => void;
-  @Input() uploadFileToStop!: (file: HTMLInputElement, stopId: string) => void;
+  @Input() uploadFileToStop!: (file: HTMLInputElement, stop:Partial<Stop>) => void;
   stopsList: Stop[] = [];
   travelService: TravelService = inject(TravelService);
   
@@ -30,7 +30,7 @@ export class EditStopComponent {
   }
 
   uploadFile(input: HTMLInputElement, st: Partial<Stop>) {
-    this.uploadFileToStop(input, st.id as string);
+    this.uploadFileToStop(input, st);
   }
 
 }

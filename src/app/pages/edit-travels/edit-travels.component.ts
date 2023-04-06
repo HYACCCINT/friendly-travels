@@ -46,8 +46,11 @@ export class EditTravelsComponent {
     }
   }
 
-  uploadFileToStop(file: HTMLInputElement, stopId: string) {
-    this.travelService.uploadToStorage(`gs://friendly-travels.appspot.com/travels/${this.travelId}/stops/${stopId}`, file)
+  uploadFileToStop(file: HTMLInputElement, stop: Partial<Stop>) {
+    const url = `gs://friendly-travels.appspot.com/travels/${this.travelId}/stops/${stop.id}`;
+    this.travelService.uploadToStorage(url, file)
+    stop.image = url;
+    this.travelService.updateData(`travels/${this.travelId}/stops/${stop.id}`, stop)
   }
   
 }
