@@ -1,0 +1,25 @@
+<main>
+    <div *ngIf="user$ | async as user; ">
+        <div *ngIf="travelsData$ | async as travelsData; ">
+            <button class="createTravel" (click)="createTravel(user.uid)">Create Travel</button>
+            <div class="edit-card"  >
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let tr of travelsData">
+                        <mat-radio-button color="primary" [checked]="tr.id == selectedTravel" [value]="tr.id" (change)="onSelectTravelUpdate($event.value)">
+                            Item {{tr.title}}
+                        </mat-radio-button>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+            <div >
+            <div class="edit-card"  >
+                <mat-list role="list">
+                    <mat-list-item role="listitem" *ngFor="let st of stopsList$ | async as stopsList;">
+                        {{st.id}}
+                    </mat-list-item>
+                </mat-list>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
