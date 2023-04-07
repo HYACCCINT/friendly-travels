@@ -1,5 +1,5 @@
 <main>
-    <!-- <div *ngIf="travelData$ | async as travelData;">
+    <div *ngIf="travelData$ | async as travelData;">
         <app-edit-travel [travel]="travelData" (on-change)="updateCurrentTravel($event)">
         </app-edit-travel>
         <div *ngIf="stopsData$ | async as stopsData;" class="edit-stops-wrapper">
@@ -7,5 +7,5 @@
                 [addStop]="addStop" [deleteStop]="deleteStop">
             </app-edit-stop-list>
         </div>
-    </div> -->
+    </div>
 </main>

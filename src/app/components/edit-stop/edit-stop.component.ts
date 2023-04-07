@@ -10,9 +10,20 @@ import { TravelService } from 'src/app/services/travel.service';
   styleUrls: ['./edit-stop.component.scss']
 })
 export class EditStopComponent {
-  @Output('on-change') onChange = new EventEmitter<Partial<Stop>>();
+    @Output('on-change') onChange = new EventEmitter<Partial<Stop>>();
+    @Input() uploadToStop!: (file: HTMLInputElement, stop: Partial<Stop>, contentType:any) => void;
+    @Input() deleteStop!: (stopId: string) => void;
+    @Input() stop = new StopObject();
+
+    stopData!:Stop;
+    private activatedRoute = inject(ActivatedRoute);
+    travelService = inject(TravelService);
+    travelId = this.activatedRoute.snapshot.paramMap.get('travelId');
 
   ngOnInit() {
+    this.stopData = {
+      ...this.stop
+    }
   }
 
   onUpdate(st: Partial<Stop>) {

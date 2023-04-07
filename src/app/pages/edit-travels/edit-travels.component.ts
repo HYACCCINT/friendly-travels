@@ -13,18 +13,35 @@ import { TravelService } from 'src/app/services/travel.service';
 export class EditTravelsComponent {
   
   private activatedRoute = inject(ActivatedRoute);
+  travelService: TravelService = inject(TravelService)
+  travelId = this.activatedRoute.snapshot.paramMap.get('travelId');
+  travelData$: Observable<Travel>;
+  stopsData$: Observable<Stop[]>;
 
-  constructor() {}
+  constructor() {
+    this.travelData$ = this.travelService.getDocData(`travels/${this.travelId}`) as Observable<Travel>
+    this.stopsData$ = this.travelService.getCollectionData(`travels/${this.travelId}/stops`) as Observable<Stop[]>
+  }
   
   updateCurrentTravel(travel: Partial<Travel>) {
+    this.travelService.updateData(`travels${this.travelId}`, travel)
   }
 
   updateCurrentStop(stop: Partial<Stop>) {
+    stop.type = stop.type?.toString();
+    this.travelService.updateData(`travels${this.travelId}/stops/${stop.id}`, stop)
   }
 
   addStop() {
+    if (this.travelId) {
+      this.travelService.addStop(this.travelId);
+    }
   }
   deleteStop(stopId: string) {
+    if (this.travelId && stopId) {
+      this.travelService.deleteData(`travels${this.travelId}/stops/${stopId}`)
+      this.stopsData$ = this.travelService.getCollectionData(`travels${this.travelId}/stops`) as Observable<Stop[]>
+    }
   }
   
 }
