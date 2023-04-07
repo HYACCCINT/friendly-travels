@@ -9,8 +9,9 @@ import { Auth, signOut, user } from '@angular/fire/auth';
 })
 export class HeaderComponent {
   private auth = inject(Auth);
-  user$ = user(this.auth);
-  
+  travelService = inject(TravelService)
+  user$ = this.travelService.user$;
+
   logout() {
     signOut(this.auth).then(() => {
       console.log('signed out');

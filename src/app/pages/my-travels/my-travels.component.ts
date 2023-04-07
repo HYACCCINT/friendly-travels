@@ -11,19 +11,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./my-travels.component.scss']
 })
 export class MyTravelsComponent {
-
+	travelService = inject(TravelService);
+	user$ = this.travelService.user$;
 	selectedTravel!: String;
+	travelsData$: Observable<Travel[]>;
+	stopsList$!: Observable<Stop[]>;
+	router = inject(Router);
 	constructor() {
+		this.travelsData$ = this.travelService.getCollectionData(`travels`) as Observable<Travel[]>
 	}
 
 	async createTravel(userId: String) {
+		this.travelService.addEmptyTravel(userId);
+
 	  }
 
 	  onSelectTravelUpdate(travelId: String) {
 		this.selectedTravel = travelId;
 	  }
 	  editTravel(travelId: String) {
+		this.router.navigate(['edit', `${travelId}`]);
 	  }
 	  deleteTravel(travelId: String) {
+		this.travelService.deleteData(`travels/${travelId}`)
 	  }
 }
