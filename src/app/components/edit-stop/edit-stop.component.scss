@@ -1,0 +1,54 @@
+.stop-img {
+    max-height: 200px;
+    max-width: 200px;
+}
+
+.edit-stop {
+    position: relative;
+    height: 20rem;
+    display: grid;
+    padding: 16px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.delete {
+    height: 2rem;
+    width: 6rem;
+    color: red;
+    border-color: red;
+    position: absolute;
+    right: 24px;
+    top: 16px;
+}
+
+.stop-title {
+    position: absolute;
+    top: 4px;
+    width: 80%;
+}
+
+.type-date-wrapper {
+    display: flex;
+    position: absolute;
+    right: 4%;
+    top: 30%;
+}
+
+.edit-type {
+    
+    height: 84px;
+    font-size: small;
+    float: left;
+}
+
+.edit-date {
+    padding-left: 40px;
+    height: 84px;
+    float: right;
+}
+.stop-blogText {
+    position:absolute;
+    width: 70%;
+    left: 30%;
+    bottom: 10%;
+}

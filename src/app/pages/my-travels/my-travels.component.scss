@@ -1,23 +1,86 @@
 :host {
-    display: grid;
-    grid-template-columns: var(--site-grid);
-    grid-row: span;
+    // display: grid;
+    // grid-template-columns: 1fr 3fr;
     padding-block: 64px;
 }
 
 :host>* {
-    grid-column: main;
+    grid-column: 80%;
 }
 
-main {
-    display: grid;
-    gap: 56px;
-}
 .travel-card-list-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
-  }
+}
+
+.travel-card-list {
+    overflow: scroll;
+    height: 600px;
+    width: 400px;
+    // width: 40%;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    position: flex;
+    gap: 1px;
+    width: 90%;
+    height: 100%;
+    margin: 2rem;
+}
+
+.travel-wrapper {
+    width: 40%;
+    float: left;
+}
+.spot-wrapper{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    float:right;
+    height: 600px;
+    overflow: scroll;
+}
+
+
+.add {
+    height: 44px;
+}
+
+.delete {
+    color: red;
+    border-color: red;
+}
+
 .travel-card {
-    min-height: 10rem;;
+    margin: 1rem;
+    height: 7rem;
+    width: 20rem;
+}
+
+label {
+    height: 100%;
+}
+
+mat-card:hover .selection {
+    opacity: 1;
+}
+
+mat-card.mat-elevation-z4 .selection {
+    opacity: 1;
+}
+
+.card-selected {
+    border: 2px solid #283593;
+}
+
+.stop-card{
+    height: 350px;
+    width: 350px;
+    margin: 8px;
+}
+.stop-image{
+    width: 100%;
+    height:60%
 }

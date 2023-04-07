@@ -21,13 +21,7 @@ export class TravelService {
   );
   
 
-  private setDefaultTravel(travel: BaseTravel, userId: String): BaseTravel {
-    travel.isPublic = travel.isPublic || false;
-    travel.userId = travel.userId || userId;
-    return {...travel};
-  }
-
-  async addEmptyTravel(userId: String): Promise<TravelRef> {
+  async addEmptyTravel(userId: String) {
     const travelData = JSON.parse(JSON.stringify(new TravelObject()));
     travelData.startDate = Timestamp.fromDate(new Date());
     travelData.endDate = Timestamp.fromDate(new Date());
@@ -44,7 +38,6 @@ export class TravelService {
   async addStop(travelId: string) {
     const stopData = JSON.parse(JSON.stringify(new StopObject()));
     stopData.visitDate = Timestamp.fromDate(new Date());
-    console.log(stopData,"stopData");
     const ref = await addDoc(collection(this.firestore, `travels/${travelId}/stops`), stopData);
     setDoc(ref, {...stopData, id: ref.id})
   }
@@ -65,18 +58,16 @@ export class TravelService {
     return collectionData(collection(this.firestore, path), {idField: 'id' })as Observable<Travel[] | Stop[]>
   }
 
-  uploadToStorage(path: string, input: HTMLInputElement, contentType: any) {
+  async uploadToStorage(path: string, input: HTMLInputElement, contentType: any) {
     if (!input.files) return null
-
         const files: FileList = input.files;
         for (let i = 0; i < files.length; i++) {
             const file = files.item(i);
             if (file) {
               const imagePath = `${path}/${file.name}`
                 const storageRef = ref(this.storage, imagePath);
-                uploadBytesResumable(storageRef, file, contentType);
-                console.log(storageRef.fullPath, "@#@!#!@!");
-                return storageRef.fullPath;
+                await uploadBytesResumable(storageRef, file, contentType);
+                return await getDownloadURL(storageRef);
             }
         }
         return null
@@ -87,7 +78,4 @@ export class TravelService {
     deleteDoc(ref);
   }
 
-  async getImageFromStorage(path: string) {
-    return await getDownloadURL(ref(this.storage, path));
-  }
 }

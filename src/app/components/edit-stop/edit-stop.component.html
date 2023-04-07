@@ -1,16 +1,36 @@
-<div>
+<div class="edit-stop">
   <button class="delete" (click)="deleteStop(stopData.id)">Delete</button>
   <form #stops="ngForm" class="form-group">
 
-    <div class="stop-row">
+    <div class="stop-row stop-title">
       <div class="form-control">
         <label>Title</label>
         <input name="stop-title" type="text" class="form-control" [(ngModel)]="stopData.title" (change)="onUpdate(stopData)" />
       </div>
     </div>
-
-    <div class="stop-row">
+    <div class="stop-row stop-image-wrapper">
+      <div *ngIf="stopData.image == ''">
+        <mat-label>Upload a picture!</mat-label>
+    </div>
+    <img [src]="stopData.image" [alt]="stopData.title" class="stop-img" />
       <div class="form-control">
+        <input id="fileUpload" type="file" #upload>
+        <button (click)="uploadFile(upload, stopData)">Upload</button>
+      </div>
+    </div>
+    <div class="stop-row type-date-wrapper">
+      <div class="form-control">
+        <mat-form-field appearance="fill" class="edit-type">
+        <label>Select a type</label>
+        <select matNativeControl class="form-control" id="stop-type" [(ngModel)]="stopData.type" name="stop-type" (change)="onUpdate(stopData)">
+          <option value="STOP">Stop</option>
+          <option value="ATTRACTION">Attraction</option>
+          <option value="FOOD">Food</option>
+          <option value="LODGING">Lodging</option>
+        </select>
+      </mat-form-field>
+      </div>
+      <div class="form-control" class="edit-date">
         <mat-form-field appearance="fill">
           <mat-label>Choose the visit date</mat-label>
           <input matInput [(ngModel)]="stopData.visitDate" [value]="stopData.visitDate.toDate()" name="visitDate"
@@ -21,35 +41,12 @@
         </mat-form-field>
       </div>
     </div>
-    <div class="stop-row">
-      <label>Stop Image</label>
-      <img [src]="stopData.image" />
-    </div>
-    <div class="stop-row">
-      <div class="form-control">
-        <mat-label>Upload a picture of your travels!</mat-label>
-        <input id="fileUpload" type="file" #upload>
-        <button (click)="uploadFile(upload, stopData)">Upload</button>
-      </div>
-    </div>
-    <div class="stop-row">
+
+    <div class="stop-row stop-blogText">
       <div class="form-control">
         <label>Travel Notes</label>
         <input name="stop-blogText" type="text" class="form-control" [(ngModel)]="stopData.blogText"
           (change)="onUpdate(stopData)" />
-      </div>
-    </div>
-
-    <div class="stop-row">
-      <div class="form-control">
-        <label>Stop Type</label>
-        <mat-label>Select an option</mat-label>
-        <select class="form-control" id="stop-type" [(ngModel)]="stopData.type" name="stop-type" (change)="onUpdate(stopData)">
-          <option value="STOP">Stop</option>
-          <option value="ATTRACTION">Attraction</option>
-          <option value="FOOD">Food</option>
-          <option vvalue="LODGING">Lodging</option>
-        </select>
       </div>
     </div>
 

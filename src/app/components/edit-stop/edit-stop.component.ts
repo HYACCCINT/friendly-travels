@@ -18,20 +18,21 @@ export class EditStopComponent {
   private activatedRoute = inject(ActivatedRoute);
   travelService: TravelService = inject(TravelService);
   travelId = this.activatedRoute.snapshot.paramMap.get('travelId');
-  
+
   ngOnInit() {
     this.stopData = { 
       ...this.stop
     };
   }
+
   onUpdate(st: Partial<Stop>) {
     this.onChange.next(st);
   }
 
-  uploadFile(file: HTMLInputElement, stop: Partial<Stop>) {
-    const url = `/travels/${this.travelId}/stops/${stop.id}`;
-    this.travelService.uploadToStorage(url, file, {contentType: 'image/png'})
-    stop.image = url;
+  async uploadFile(file: HTMLInputElement, stop: Partial<Stop>) {
+    const path = `/travels/${this.travelId}/stops/${stop.id}`;
+    const url = await this.travelService.uploadToStorage(path, file, {contentType: 'image/png'})
+    stop.image = url ? url : '';
     this.travelService.updateData(`travels/${this.travelId}/stops/${stop.id}`, stop)
   }
 

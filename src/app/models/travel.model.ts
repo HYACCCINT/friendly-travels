@@ -42,16 +42,16 @@ export class TravelObject implements Travel {
     endDate: Timestamp = Timestamp.now();
     isPublic: boolean = false;
     userId!: String
-    title: string = '';
+    title: string = 'Travel ';
 }
 
 export class StopObject implements Stop {
     id!: string;
     visitDate: Timestamp = Timestamp.now();
     mood: number = 1;
-    blogText: string = '';
-    image!: string;
+    blogText: string = 'What did I do here?';
+    image: string = '';
     location!: Geolocation;
     type: StopType | string = 'STOP';
-    title: string = '';
+    title: string = 'A stop along the journey';
 }
