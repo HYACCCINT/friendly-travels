@@ -11,18 +11,8 @@ import { TravelService } from 'src/app/services/travel.service';
 })
 export class EditStopComponent {
   @Output('on-change') onChange = new EventEmitter<Partial<Stop>>();
-  @Input() uploadToStop!: (file: HTMLInputElement, stop:Partial<Stop>, contentType: any) => void;
-  @Input() deleteStop!: (stopId: string) => void;
-  @Input() stop: Stop = new StopObject();;
-  stopData!: Stop;
-  private activatedRoute = inject(ActivatedRoute);
-  travelService: TravelService = inject(TravelService);
-  travelId = this.activatedRoute.snapshot.paramMap.get('travelId');
 
   ngOnInit() {
-    this.stopData = { 
-      ...this.stop
-    };
   }
 
   onUpdate(st: Partial<Stop>) {
@@ -30,10 +20,6 @@ export class EditStopComponent {
   }
 
   async uploadFile(file: HTMLInputElement, stop: Partial<Stop>) {
-    const path = `/travels/${this.travelId}/stops/${stop.id}`;
-    const url = await this.travelService.uploadToStorage(path, file, {contentType: 'image/png'})
-    stop.image = url ? url : '';
-    this.travelService.updateData(`travels/${this.travelId}/stops/${stop.id}`, stop)
   }
 
 }
