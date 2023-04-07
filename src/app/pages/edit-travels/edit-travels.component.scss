@@ -1,25 +1,27 @@
 :host {
     display: grid;
-    grid-template-columns: main-end;
+    // grid-template-columns:auto auto;
     padding-block: 64px;
   }
   
   :host > * {
-    grid-column: main;
+    grid-column: 80%;
   }
   
   main {
-    display: inline-block;
     display: grid;
-    gap: 56px;
+    // grid-template-columns:auto auto;
+    gap: 1px;
+    
   }
   app-edit-travel{
-    display: grid;
-    grid-template-columns:40%;
-    grid-template-rows: 10;
+    border-right: 1px black;
+    padding: 12px;
+    float: left;
   }
   .edit-stops-wrapper{
-    display: grid;
-    padding: 8px;
+    min-height: 100%;
     float: right;
+    width: 50%;
+    padding: 12px;
   }

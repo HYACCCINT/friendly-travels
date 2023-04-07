@@ -29,8 +29,8 @@ export class TravelService {
 
   async addEmptyTravel(userId: String): Promise<TravelRef> {
     const travelData = JSON.parse(JSON.stringify(new TravelObject()));
-    travelData.startDate = travelData.startDate || Timestamp.now();
-    travelData.endDate = travelData.endDate || Timestamp.now();
+    travelData.startDate = Timestamp.fromDate(new Date());
+    travelData.endDate = Timestamp.fromDate(new Date());
     travelData.isPublic = travelData.isPublic || false;
     travelData.userId = travelData.userId || userId;
     return addDoc(collection(this.firestore, 'travels'), travelData).then((travelRef) => {
@@ -43,7 +43,8 @@ export class TravelService {
 
   async addStop(travelId: string) {
     const stopData = JSON.parse(JSON.stringify(new StopObject()));
-    stopData.visitDate = stopData.visitDate || Timestamp.now();
+    stopData.visitDate = Timestamp.fromDate(new Date());
+    console.log(stopData,"stopData");
     const ref = await addDoc(collection(this.firestore, `travels/${travelId}/stops`), stopData);
     setDoc(ref, {...stopData, id: ref.id})
   }

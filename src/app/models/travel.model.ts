@@ -38,8 +38,8 @@ export type TravelRefModel = {
 
 export class TravelObject implements Travel {
     id!: string;
-    startDate!: Timestamp;
-    endDate!: Timestamp;
+    startDate: Timestamp = Timestamp.now();
+    endDate: Timestamp = Timestamp.now();
     isPublic: boolean = false;
     userId!: String
     title: string = '';
@@ -47,7 +47,7 @@ export class TravelObject implements Travel {
 
 export class StopObject implements Stop {
     id!: string;
-    visitDate!: Timestamp;
+    visitDate: Timestamp = Timestamp.now();
     mood: number = 1;
     blogText: string = '';
     image!: string;

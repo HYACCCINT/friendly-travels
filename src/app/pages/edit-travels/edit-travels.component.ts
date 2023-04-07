@@ -45,12 +45,5 @@ export class EditTravelsComponent {
       this.stopsData$ = this.travelService.getCollectionData(`travels/${this.travelId}/stops`) as Observable<Stop[]>;
     }
   }
-
-  uploadFileToStop(file: HTMLInputElement, stop: Partial<Stop>, contentType: any) {
-    const url = `/travels/${this.travelId}/stops/${stop.id}`;
-    this.travelService.uploadToStorage(url, file, contentType)
-    stop.image = url;
-    this.travelService.updateData(`travels/${this.travelId}/stops/${stop.id}`, stop)
-  }
   
 }

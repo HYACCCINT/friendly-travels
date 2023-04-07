@@ -14,11 +14,12 @@
           (change)="onUpdate(travelData)" />
       </div>
     </div>
+    <div class="travel-date-wrapper">
     <div class="stop-row">
-      <div class="form-control">
+      <div class="form-control travel-datepicker">
         <mat-form-field appearance="fill">
           <mat-label>Choose the start date</mat-label>
-          <input matInput [(ngModel)]="travelData.startDate" [value]="travelData?.startDate?.toDate()" name="startDate"
+          <input matInput [(ngModel)]="travelData.startDate" [value]="travelData.startDate.toDate()" name="startDate"
             [matDatepicker]="startDatePicker" (dateChange)="onUpdate(travelData)" class="form-control" />
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="startDatePicker"></mat-datepicker-toggle>
@@ -27,10 +28,10 @@
       </div>
     </div>
     <div class="stop-row">
-      <div class="form-control">
+      <div class="form-control travel-datepicker">
         <mat-form-field appearance="fill">
           <mat-label>Choose the end date</mat-label>
-          <input matInput [(ngModel)]="travelData.endDate" [value]="travelData?.endDate?.toDate()" name="endDate"
+          <input matInput [(ngModel)]="travelData.endDate" [value]="travelData.endDate.toDate()" name="endDate"
             [matDatepicker]="endDatePicker" (dateChange)="onUpdate(travelData)" class="form-control" />
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
@@ -38,5 +39,6 @@
         </mat-form-field>
       </div>
     </div>
+  </div>
   </div>
 </form>

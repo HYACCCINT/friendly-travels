@@ -21,14 +21,15 @@ import { MatRadioModule } from '@angular/material/radio';
 import { HeaderComponent } from './components/header/header.component';
 import { MyTravelsComponent } from './pages/my-travels/my-travels.component';
 import { EditTravelsComponent } from './pages/edit-travels/edit-travels.component';
-import { EditStopComponent } from './edit-stop/edit-stop.component';
-import { EditTravelComponent } from './edit-travel/edit-travel.component';
+import { EditStopComponent } from './components/edit-stop/edit-stop.component';
+import { EditTravelComponent } from './components/edit-travel/edit-travel.component';
 
 import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { connectAuthEmulator, getAuth, provideAuth } from '@angular/fire/auth';
 import { connectFirestoreEmulator, getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { connectStorageEmulator, getStorage, provideStorage } from '@angular/fire/storage';
 import { connectFunctionsEmulator, getFunctions, provideFunctions } from '@angular/fire/functions';
+import { EditStopListComponent } from './components/edit-stop-list/edit-stop-list.component';
 
 
 
@@ -44,6 +45,7 @@ import { connectFunctionsEmulator, getFunctions, provideFunctions } from '@angul
     EditTravelsComponent,
     EditStopComponent,
     EditTravelComponent,
+    EditStopListComponent,
   ],
   imports: [
     MatCardModule,

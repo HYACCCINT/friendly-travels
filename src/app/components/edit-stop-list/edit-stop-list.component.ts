@@ -1,14 +1,13 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
-import { Timestamp } from '@angular/fire/firestore';
-import { Stop, StopObject } from 'src/app/models/travel.model';
+import { Stop } from 'src/app/models/travel.model';
 import { TravelService } from 'src/app/services/travel.service';
 
 @Component({
-  selector: 'app-edit-stop',
-  templateUrl: './edit-stop.component.html',
-  styleUrls: ['./edit-stop.component.scss']
+  selector: 'app-edit-stop-list',
+  templateUrl: './edit-stop-list.component.html',
+  styleUrls: ['./edit-stop-list.component.scss']
 })
-export class EditStopComponent {
+export class EditStopListComponent {
   @Output('on-change') onChange = new EventEmitter<Partial<Stop>>();
   @Input() stops: Stop[] = [];
   @Input() travelId: string = '';
@@ -29,15 +28,4 @@ export class EditStopComponent {
   onUpdate(st: Partial<Stop>) {
     this.onChange.next(st);
   }
-
-  uploadFile(input: HTMLInputElement, st: Partial<Stop>) {
-    this.uploadFileToStop(input, st, {
-      contentType: 'image/png',
-    });
-  }
-
-  async getImageFromPath(path: string){
-    return await this.travelService.getImageFromStorage(path);
-  }
-
 }
