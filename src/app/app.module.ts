@@ -23,6 +23,11 @@ import { EditTravelsComponent } from './pages/edit-travels/edit-travels.componen
 import { EditStopComponent } from './components/edit-stop/edit-stop.component';
 import { EditTravelComponent } from './components/edit-travel/edit-travel.component';
 import { EditStopListComponent } from './components/edit-stop-list/edit-stop-list.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth, connectAuthEmulator } from '@angular/fire/auth';
+import { provideFirestore,getFirestore, connectFirestoreEmulator } from '@angular/fire/firestore';
+import { provideFunctions,getFunctions, connectFunctionsEmulator } from '@angular/fire/functions';
+import { provideStorage,getStorage, connectStorageEmulator } from '@angular/fire/storage';
 
 
 
@@ -59,6 +64,35 @@ import { EditStopListComponent } from './components/edit-stop-list/edit-stop-lis
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => {
+      const auth = getAuth();
+      if (location.hostname === 'localhost') {
+        connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
+      }
+      return auth;
+    }),
+    provideFirestore(() => {
+      const firestore = getFirestore();
+      if (location.hostname === 'localhost') {
+        connectFirestoreEmulator(firestore, '127.0.0.1', 8080);
+      }
+      return firestore;
+    }),
+    provideFunctions(() => {
+      const functions = getFunctions();
+      if (location.hostname === 'localhost') {
+        connectFunctionsEmulator(functions, '127.0.0.1', 5001);
+      }
+      return functions;
+    }),
+    provideStorage(() => {
+      const storage = getStorage();
+      if (location.hostname === 'localhost') {
+        connectStorageEmulator(storage, '127.0.0.1', 5001);
+      }
+      return storage;
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
