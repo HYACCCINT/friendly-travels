@@ -1,13 +1,4 @@
 import { Component, inject, OnInit } from '@angular/core';
-import {
-  Auth,
-  GoogleAuthProvider,
-  signInWithPopup,
-  signOut,
-  User,
-  user,
-} from '@angular/fire/auth';
-import { doc, Firestore, setDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-login-page',
@@ -18,9 +9,6 @@ export class LoginPageComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  private updateUserData(user: User) {
-  }
 
   login() {
   }

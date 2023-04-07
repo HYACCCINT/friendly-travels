@@ -22,12 +22,6 @@ import { MyTravelsComponent } from './pages/my-travels/my-travels.component';
 import { EditTravelsComponent } from './pages/edit-travels/edit-travels.component';
 import { EditStopComponent } from './components/edit-stop/edit-stop.component';
 import { EditTravelComponent } from './components/edit-travel/edit-travel.component';
-
-import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
-import { connectAuthEmulator, getAuth, provideAuth } from '@angular/fire/auth';
-import { connectFirestoreEmulator, getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { connectStorageEmulator, getStorage, provideStorage } from '@angular/fire/storage';
-import { connectFunctionsEmulator, getFunctions, provideFunctions } from '@angular/fire/functions';
 import { EditStopListComponent } from './components/edit-stop-list/edit-stop-list.component';
 
 
