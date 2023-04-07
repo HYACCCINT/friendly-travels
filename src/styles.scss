@@ -1,3 +1,4 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 :root {
   --hue: 215;
   --white: hsl(0, 0%, 0%);
@@ -39,7 +40,7 @@
   --theme-home-stripe: var(--color-7);
   --theme-home-under-stripe: var(--color-6);
 
-  --container-width: 1620px;
+  --container-width: 100%;
   --site-grid: [full-start] 1fr [container-start main-start] 3fr [main-end aside-start] 2fr [container-end] 1fr [aside-end full-end];
 }
 
@@ -88,14 +89,14 @@ input[type='text'] {
   padding: 8px;
 }
 
-button {
-  border: 1px solid var(--color-6); 
-  padding: 2px 6px;
-  position: relative;
-  background: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
+// button {
+//   border: 1px solid var(--color-6); 
+//   padding: 2px 6px;
+//   position: relative;
+//   background: none;
+//   border-radius: 2px;
+//   cursor: pointer;
+// }
 
 button.add::before {
   content: '+';
@@ -126,3 +127,10 @@ button.add::before {
   justify-content: space-between;
   margin-block-end: -32px;
 }
+
+.title {
+  max-width: 70%;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

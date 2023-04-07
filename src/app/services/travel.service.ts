@@ -3,7 +3,7 @@ import { Auth, authState, onAuthStateChanged } from '@angular/fire/auth';
 import { map, switchMap, firstValueFrom, filter, Observable } from "rxjs";
 import {  doc, docData, DocumentReference, Firestore, getDoc, setDoc, updateDoc, collection, addDoc, deleteDoc, collectionData, Timestamp } from "@angular/fire/firestore";
 import { Stop, Travel, TravelRefModel, TravelRef, TravelObject, BaseTravel, StopObject } from "../models/travel.model";
-import { Storage, ref, uploadBytesResumable } from "@angular/fire/storage";
+import { Storage, getDownloadURL, ref, uploadBytesResumable } from "@angular/fire/storage";
 import { Router } from "@angular/router";
 
 @Injectable({
@@ -22,16 +22,17 @@ export class TravelService {
   
 
   private setDefaultTravel(travel: BaseTravel, userId: String): BaseTravel {
-    travel.startDate = travel.startDate || Timestamp.now();
-    travel.endDate = travel.endDate || Timestamp.now();
     travel.isPublic = travel.isPublic || false;
     travel.userId = travel.userId || userId;
     return {...travel};
   }
 
   async addEmptyTravel(userId: String): Promise<TravelRef> {
-    const travelObj = new TravelObject();
-    const travelData = JSON.parse(JSON.stringify(this.setDefaultTravel(travelObj, userId)));
+    const travelData = JSON.parse(JSON.stringify(new TravelObject()));
+    travelData.startDate = travelData.startDate || Timestamp.now();
+    travelData.endDate = travelData.endDate || Timestamp.now();
+    travelData.isPublic = travelData.isPublic || false;
+    travelData.userId = travelData.userId || userId;
     return addDoc(collection(this.firestore, 'travels'), travelData).then((travelRef) => {
       collection(this.firestore, `travels/${travelRef.id}/stops`);
       setDoc(travelRef, {...travelData, id: travelRef.id})
@@ -63,7 +64,7 @@ export class TravelService {
     return collectionData(collection(this.firestore, path), {idField: 'id' })as Observable<Travel[] | Stop[]>
   }
 
-  uploadToStorage(path: string, input: HTMLInputElement) {
+  uploadToStorage(path: string, input: HTMLInputElement, contentType: any) {
     if (!input.files) return null
 
         const files: FileList = input.files;
@@ -72,7 +73,7 @@ export class TravelService {
             if (file) {
               const imagePath = `${path}/${file.name}`
                 const storageRef = ref(this.storage, imagePath);
-                uploadBytesResumable(storageRef, file);
+                uploadBytesResumable(storageRef, file, contentType);
                 console.log(storageRef.fullPath, "@#@!#!@!");
                 return storageRef.fullPath;
             }
@@ -82,7 +83,10 @@ export class TravelService {
 
   async deleteDoc(path: string) {
     const ref = await doc(this.firestore, path);
-    console.log(ref,"!");
     deleteDoc(ref);
+  }
+
+  async getImageFromStorage(path: string) {
+    return await getDownloadURL(ref(this.storage, path));
   }
 }

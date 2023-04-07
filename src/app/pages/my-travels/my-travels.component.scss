@@ -1,6 +1,7 @@
 :host {
     display: grid;
     grid-template-columns: var(--site-grid);
+    grid-row: span;
     padding-block: 64px;
 }
 
@@ -11,4 +12,12 @@
 main {
     display: grid;
     gap: 56px;
+}
+.travel-card-list-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+.travel-card {
+    min-height: 10rem;;
 }

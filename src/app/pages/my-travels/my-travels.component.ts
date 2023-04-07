@@ -32,4 +32,7 @@ export class MyTravelsComponent {
 	  editTravel(travelId: String) {
 		this.router.navigate(['edit', `${travelId}`]);
 	  }
+	  deleteTravel(travelId: String) {
+		this.travelService.deleteDoc(`travels/${travelId})`);
+	  }
 }

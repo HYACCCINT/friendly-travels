@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { Timestamp } from '@angular/fire/firestore';
 import { Stop, StopObject } from 'src/app/models/travel.model';
 import { TravelService } from 'src/app/services/travel.service';
 
@@ -13,7 +14,7 @@ export class EditStopComponent {
   @Input() travelId: string = '';
   @Input() addStop!: (travelId: string) => void;
   @Input() deleteStop!: (stopId: string) => void;
-  @Input() uploadFileToStop!: (file: HTMLInputElement, stop:Partial<Stop>) => void;
+  @Input() uploadFileToStop!: (file: HTMLInputElement, stop:Partial<Stop>, contentType: any) => void;
   stopsList: Stop[] = [];
   travelService: TravelService = inject(TravelService);
   
@@ -30,7 +31,13 @@ export class EditStopComponent {
   }
 
   uploadFile(input: HTMLInputElement, st: Partial<Stop>) {
-    this.uploadFileToStop(input, st);
+    this.uploadFileToStop(input, st, {
+      contentType: 'image/png',
+    });
+  }
+
+  async getImageFromPath(path: string){
+    return await this.travelService.getImageFromStorage(path);
   }
 
 }

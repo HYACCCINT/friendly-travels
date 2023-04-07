@@ -23,17 +23,6 @@ export type BaseTravel = {
     title: string;
 }
 
-type SnapStop = {
-    id: string;
-    visitDate: Timestamp;
-    mood: number;
-    blogText: string;
-    image: string;
-    location: Geolocation;
-    type: StopType | string;
-    title: string;
-  }
-
 export interface Travel extends BaseTravel {
 }
 

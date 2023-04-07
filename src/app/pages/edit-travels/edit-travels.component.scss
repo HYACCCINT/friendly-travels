@@ -1,6 +1,6 @@
 :host {
     display: grid;
-    grid-template-columns: var(--site-grid);
+    grid-template-columns: main-end;
     padding-block: 64px;
   }
   
@@ -12,4 +12,14 @@
     display: inline-block;
     display: grid;
     gap: 56px;
+  }
+  app-edit-travel{
+    display: grid;
+    grid-template-columns:40%;
+    grid-template-rows: 10;
+  }
+  .edit-stops-wrapper{
+    display: grid;
+    padding: 8px;
+    float: right;
   }
