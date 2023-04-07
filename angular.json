@@ -106,8 +106,8 @@
             "prerender": false,
             "ssr": false,
             "browserTarget": "friendly-travels:build:production",
-            "firebaseProject": "travels-demo-4a1a2",
-            "firebaseHostingSite": "travels-demo-4a1a2"
+            "firebaseProject": "friendly-travels-b6a4b",
+            "firebaseHostingSite": "friendly-travels-b6a4b"
           }
         }
       }

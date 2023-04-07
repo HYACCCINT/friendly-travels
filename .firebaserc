@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "friendly-travels-b6a4b": {
+      "hosting": {
+        "friendly-travels": [
+          "friendly-travels-b6a4b"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "friendly-travels-b6a4b"
+  }
+}
