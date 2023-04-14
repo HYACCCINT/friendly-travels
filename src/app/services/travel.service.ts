@@ -65,6 +65,9 @@ export class TravelService {
             const file = files.item(i);
             if (file) {
               const imagePath = `${path}/${file.name}`
+              const storageRef = ref(this.storage, imagePath);
+              await uploadBytesResumable(storageRef, file, contentType);
+              return await getDownloadURL(storageRef);
             }
         }
         return null

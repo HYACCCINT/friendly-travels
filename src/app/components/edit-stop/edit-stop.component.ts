@@ -31,6 +31,10 @@ export class EditStopComponent {
   }
 
   async uploadFile(file: HTMLInputElement, stop: Partial<Stop>) {
+    const path = `/travels/${this.travelId}/stops/${stop.id}`
+    const url = await this.travelService.uploadToStorage(path, file, {contentType: 'image/png'});
+    stop.image = url ? url : '';
+    this.travelService.updateData(path, stop);
   }
 
 }
